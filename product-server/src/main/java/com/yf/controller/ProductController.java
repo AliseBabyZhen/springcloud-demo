@@ -24,7 +24,6 @@ public class ProductController {
 
     @RequestMapping(value = "/{id}",method = RequestMethod.GET)
     public Product find(@PathVariable long id){
-        System.out.println("1111111111111");
         return productService.finyById(id);
     }
 }
