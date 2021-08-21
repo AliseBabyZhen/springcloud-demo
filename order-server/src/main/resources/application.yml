@@ -1,0 +1,23 @@
+server:
+  port: 9002
+spring:
+  application:
+    name: order-service
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/lianjin?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 878346
+  jpa:
+    database: MySQL
+    show-sql: true
+    open-in-view: true
+
+#配置Eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9000/eureka/
+  instance:
+    prefer-ip-address: false #使用ip地址注册
+
