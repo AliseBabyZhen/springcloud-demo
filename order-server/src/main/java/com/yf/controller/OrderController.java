@@ -39,6 +39,7 @@ public class OrderController {
 	 */
 	@RequestMapping(value = "/buy/{id}",method = RequestMethod.GET)
 	public Product findById(@PathVariable Long id) {
+		//服务分开独立之后 无需在这里去调用service 只需要对被调用的微服务发起http请求即可拿到参数 使用的是restTemplate
 		return restTemplate.getForObject("http://product-server/product/"+id,Product.class);
 	}
 

@@ -2,7 +2,7 @@ server:
   port: 9002
 spring:
   application:
-    name: order-service
+    name: order-service  #服务中显示的名字
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/lianjin?useUnicode=true&characterEncoding=utf8
@@ -17,7 +17,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://127.0.0.1:9000/eureka/
+      defaultZone: http://127.0.0.1:9000/eureka/ #注册到哪个服务中心
   instance:
     prefer-ip-address: false #使用ip地址注册
 
