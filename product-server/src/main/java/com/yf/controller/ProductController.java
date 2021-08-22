@@ -25,7 +25,7 @@ public class ProductController {
     private String port;
     @Value("${spring.cloud.client.ip-address}")
     private String ip;
-
+    //使用ribbon负载均衡
     @RequestMapping(value = "/{id}",method = RequestMethod.GET)
     public Product find(@PathVariable long id){
         Product product = productService.finyById(id);
