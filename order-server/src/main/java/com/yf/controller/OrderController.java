@@ -29,8 +29,7 @@ public class OrderController {
 	 *      调用方法获取服务的元数据信息
 	 *
 	 */
-	@Autowired
-	private DiscoveryClient discoveryClient;
+
 
 
 	/**
@@ -38,12 +37,10 @@ public class OrderController {
 	 *  1.使用@LoadBalanced声明RestTemplate
 	 *  2.使用服务名称替换ip地址
 	 */
-	/*@RequestMapping(value = "/buy/{id}",method = RequestMethod.GET)
+	@RequestMapping(value = "/buy/{id}",method = RequestMethod.GET)
 	public Product findById(@PathVariable Long id) {
-		Product product = null;
-		product = restTemplate.getForObject("http://localhost:9001/product/1",Product.class);
-		return product;
-	}*/
+		return restTemplate.getForObject("http://product-server/product/"+id,Product.class);
+	}
 
 	/**
 	 * 参数:商品id
@@ -52,7 +49,7 @@ public class OrderController {
 	 *      2.需要调用商品服务
 	 *  使用java中的urlconnection,httpclient,okhttp
 	 */
-	@RequestMapping(value = "/buy/{id}",method = RequestMethod.GET)
+/*	@RequestMapping(value = "/buy/{id}",method = RequestMethod.GET)
 	public Product findById(@PathVariable Long id) {
 		//调用discoveryClient方法
 		//已调用服务名称获取所有的元数据
@@ -62,7 +59,7 @@ public class OrderController {
 
 		Product product = restTemplate.getForObject("http://"+serviceInstance.getHost()+":"+serviceInstance.getPort()+"/product/"+id+"/",Product.class);
 		return product;
-	}
+	}*/
 
 
 }
