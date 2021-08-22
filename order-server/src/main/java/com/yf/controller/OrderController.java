@@ -2,6 +2,7 @@ package com.yf.controller;
 
 import com.yf.entity.Product;
 import com.yf.entity.Product;
+import com.yf.feign.ProductFeginClient;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.cloud.client.ServiceInstance;
@@ -20,16 +21,11 @@ import java.util.List;
 public class OrderController {
 
 	//注入restTemplate对象
+	//@Autowired
+	//private RestTemplate restTemplate;
+
 	@Autowired
-	private RestTemplate restTemplate;
-
-	/**
-	 * 注入DiscoveryClient :
-	 *  springcloud提供的获取原数组的工具类
-	 *      调用方法获取服务的元数据信息
-	 *
-	 */
-
+	private ProductFeginClient productFeginClient;
 
 
 	/**
@@ -39,8 +35,8 @@ public class OrderController {
 	 */
 	@RequestMapping(value = "/buy/{id}",method = RequestMethod.GET)
 	public Product findById(@PathVariable Long id) {
-		//服务分开独立之后 无需在这里去调用service 只需要对被调用的微服务发起http请求即可拿到参数 使用的是restTemplate
-		return restTemplate.getForObject("http://product-server/product/"+id,Product.class);
+		//fegin简化调用请求
+		return productFeginClient.findById(id);
 	}
 
 	/**

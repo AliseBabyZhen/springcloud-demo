@@ -5,11 +5,20 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
+
+/**
+ * 第一步 加上fegin的注解
+ * 第二步 创建一个接口（可以理解为controller）处理映射过来的调用服务的http请求
+ * 第三部 在controller中注入ProductFeginClient 然后调用相应的API即可
+ * 对于负载均衡无需做配置 Ribbon默认的轮询 fegin也可使用 可以进行配置替换
+ */
 @SpringBootApplication
 @EntityScan("con.yf.entity")
+@EnableFeignClients
 public class OrderApplication {
 
 	/**
