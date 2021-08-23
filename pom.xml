@@ -12,6 +12,7 @@
         <module>product-server</module>
         <module>order-server</module>
         <module>eureka-server</module>
+        <module>order-server-hystrix</module>
     </modules>
 
     <parent>

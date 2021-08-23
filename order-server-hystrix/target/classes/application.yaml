@@ -1,0 +1,43 @@
+server:
+  port: 9006
+spring:
+  application:
+    name: order-service  #服务中显示的名字
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/lianjin?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 878346
+  jpa:
+    database: MySQL
+    show-sql: true
+    open-in-view: true
+
+#配置Eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9000/eureka/ #注册到哪个服务中心
+  instance:
+    prefer-ip-address: false #使用ip地址注册
+
+logging:
+  level:
+    root: debug
+
+#修改ribbon 加入失败重试机制，需在pom中导入依赖，
+product-server:
+  ribbon:
+    ConnectTimeout: 250 # Ribbon的连接超时时间
+    ReadTimeout: 1000 # Ribbon的数据读取超时时间
+    OkToRetryOnAllOperations: true # 是否对所有操作都进行重试
+    MaxAutoRetriesNextServer: 1 # 切换实例的重试次数
+    MaxAutoRetries: 1 # 对当前实例的重试次数
+    #修改ribbon负载均衡策略
+    #NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+feign:
+  hystrix: #在feign中开启hystrix熔断
+    enabled: true
+
+

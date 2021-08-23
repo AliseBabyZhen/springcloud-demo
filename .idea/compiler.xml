@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="product-server" />
         <module name="eureka-server" />
+        <module name="order-server-hystrix" />
         <module name="order-server" />
       </profile>
     </annotationProcessing>
@@ -17,6 +18,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="eureka-server" options="-parameters" />
       <module name="order-server" options="-parameters" />
+      <module name="order-server-hystrix" options="-parameters" />
       <module name="product-server" options="-parameters" />
       <module name="springcloud-demo" options="-parameters" />
     </option>
