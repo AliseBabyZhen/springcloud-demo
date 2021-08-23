@@ -39,6 +39,11 @@ public class OrderController {
 		return productFeginClient.findById(id);
 	}
 
+	@RequestMapping(value = "/delete/{id}",method = RequestMethod.GET)
+	public String delete(@PathVariable long id){
+		return productFeginClient.delete(id);
+	}
+
 	/**
 	 * 参数:商品id
 	 *  通过订单系统,调用商品服务根据id查询商品信息

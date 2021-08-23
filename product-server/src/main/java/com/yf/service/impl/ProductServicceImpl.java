@@ -34,6 +34,6 @@ public class ProductServicceImpl implements ProductService {
 
     @Override
     public void delete(long id) {
-
+        productDao.deleteById(id);
     }
 }

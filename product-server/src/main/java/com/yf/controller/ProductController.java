@@ -32,4 +32,11 @@ public class ProductController {
         product.setProductName("访问的是"+ip+":"+port);
         return product;
     }
+
+    @RequestMapping(value = "/delete/{id}",method = RequestMethod.GET)
+    public String delete(@PathVariable long id){
+        productService.delete(id);
+        return "ok";
+    }
+
 }
