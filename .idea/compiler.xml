@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="product-server" />
+        <module name="order-server-turbine" />
         <module name="eureka-server" />
         <module name="order-server-hystrix" />
         <module name="order-server" />
@@ -19,6 +20,7 @@
       <module name="eureka-server" options="-parameters" />
       <module name="order-server" options="-parameters" />
       <module name="order-server-hystrix" options="-parameters" />
+      <module name="order-server-turbine" options="-parameters" />
       <module name="product-server" options="-parameters" />
       <module name="springcloud-demo" options="-parameters" />
     </option>

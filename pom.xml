@@ -13,6 +13,7 @@
         <module>order-server</module>
         <module>eureka-server</module>
         <module>order-server-hystrix</module>
+        <module>order-server-turbine</module>
     </modules>
 
     <parent>

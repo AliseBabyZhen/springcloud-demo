@@ -39,5 +39,9 @@ product-server:
 feign:
   hystrix: #在feign中开启hystrix熔断
     enabled: true
-
-
+#hyetrix暴露全部的监控信息      s
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

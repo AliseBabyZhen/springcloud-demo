@@ -18,7 +18,7 @@ import org.springframework.web.client.RestTemplate;
  */
 @SpringBootApplication
 @EntityScan("con.yf.entity")
-@EnableFeignClients
+@EnableFeignClients //启用fegin
 public class OrderApplication {
 
 	/**
