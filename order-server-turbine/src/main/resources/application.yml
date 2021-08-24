@@ -1,5 +1,5 @@
 server:
-  port: 8031 #监控服务自己的端口 访问域名是http://127.0.0.1:9000/eureka/ 里面填入的要监控的端点是http://localhost:8031/turbine.stream
+  port: 8031 #监控服务自己的端口 访问域名是http://localhost:8031/hystrix 里面填入的要监控的端点是http://localhost:8031/turbine.stream
 spring:
   application:
     name: microservice-hystrix-turbine
