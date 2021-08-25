@@ -8,16 +8,18 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="product-server" />
-        <module name="order-server-turbine" />
         <module name="eureka-server" />
-        <module name="order-server-hystrix" />
         <module name="order-server" />
+        <module name="order-server-turbine" />
+        <module name="order-server-hystrix" />
+        <module name="gateway-server" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="eureka-server" options="-parameters" />
+      <module name="gateway-server" options="-parameters" />
       <module name="order-server" options="-parameters" />
       <module name="order-server-hystrix" options="-parameters" />
       <module name="order-server-turbine" options="-parameters" />

@@ -1,5 +1,5 @@
 server:
-  port: 9006
+  port: 9001
 spring:
   application:
     name: order-service  #服务中显示的名字
@@ -23,7 +23,7 @@ eureka:
 
 logging:
   level:
-    root: debug
+    root: INFO #debug输出太多导致卡了
 
 #修改ribbon 加入失败重试机制，需在pom中导入依赖，
 product-server:
@@ -39,6 +39,12 @@ product-server:
 feign:
   hystrix: #在feign中开启hystrix熔断
     enabled: true
+    command:
+      default: #也可以针对多个服务
+        execution:
+          isolation:
+            thread:
+              timeoutInMilliseconds: 15000 # 设置hystrix的超时时间为4000ms
 #hyetrix暴露全部的监控信息      s
 management:
   endpoints:

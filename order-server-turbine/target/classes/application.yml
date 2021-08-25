@@ -1,5 +1,5 @@
 server:
-  port: 8031
+  port: 8031 #监控服务自己的端口 访问域名是http://localhost:8031/hystrix 里面填入的要监控的端点是http://localhost:8031/turbine.stream
 spring:
   application:
     name: microservice-hystrix-turbine
@@ -7,11 +7,11 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://127.0.0.1:9000/eureka/
+      defaultZone: http://127.0.0.1:9000/eureka/ #配置注册中心
   instance:
     prefer-ip-address: true
 
 turbine:
-# 要监控的微服务列表，多个用,分隔
+# 从注册中心找到要监控的微服务列表，多个用,分隔
   appConfig: order-service,product-server
   clusterNameExpression: "'default'"

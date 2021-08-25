@@ -1,5 +1,5 @@
 server:
-  port: 9002
+  port: 9001
 spring:
   application:
     name: order-service  #服务中显示的名字
@@ -35,6 +35,7 @@ product-server:
     MaxAutoRetries: 1 # 对当前实例的重试次数
   #修改ribbon负载均衡策略
     #NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
 
 
 

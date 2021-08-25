@@ -1,5 +1,6 @@
 package com.yf.controller;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.yf.entity.Product;
 import com.yf.feign.ProductFeginClient;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,7 @@ public class OrderController {
 		//fegin简化调用请求
 		return productFeginClient.findById(id);
 	}
+
 
 	@RequestMapping(value = "/delete/{id}",method = RequestMethod.GET)
 	public String delete(@PathVariable long id){
